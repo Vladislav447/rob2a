@@ -32,11 +32,11 @@ while(1==1)
 	{                                                                         // || (or) it is '-1'.  (-1 is the value returned when nothing is in it's visable range)
 		motor[rightMotor] = 63;			// Motor on port2 is run at half (63) power forward
 		motor[leftMotor]  = 63;			// Motor on port3 is run at half (63) power forward
-		Light_sensor();
+		Light_sensor();//if light_sensor > 300 stoppar hann ef ekki gerir hann ekkert
 	}
-	stop_motors(1000);
-	Turn();
-	Light_sensor();
+	stop_motors(1000);//stoppar í 1 secondu
+	Turn();//notar rand%2 til ad beygja
+	Light_sensor();//if light_sensor > 300 stoppar hann ef ekki gerir hann ekkert
 }
 StopTask(battery);
 StopTask(killswitch);
